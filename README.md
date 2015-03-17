@@ -1,5 +1,5 @@
 #node-micro
-node-micro is a open-source microservice template built with NodeJS. It is designed to work with the [LSQ] platform. It includes all of the features necessary to build a robust microservice. 
+node-micro is a microservice template built with NodeJS. It is designed to work with the [LSQ] platform. It includes all of the features necessary to build a robust microservice. 
 
 You can customize this template to suit almost any use case.
 
