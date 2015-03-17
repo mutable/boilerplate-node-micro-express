@@ -16,5 +16,4 @@ Add, edit, and securely store service-related configuration (such as API keys) u
 
 - ###Health Checks (coming soon)
  
- ----
  [LSQ]: https://lsq.io
