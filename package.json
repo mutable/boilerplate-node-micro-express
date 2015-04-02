@@ -8,12 +8,13 @@
     "debug": "^2.1.2",
     "express": "^4.12.2",
     "lsq": "0.0.3",
+    "marked": "^0.0.3",
     "method-override": "^2.3.1",
     "morgan": "^1.5.1",
     "on-finished": "^2.2.0",
     "promise": "^6.1.0",
     "request": "^2.53.0",
-    "marked":"^0.0.3"
+    "toobusy-js": "^0.4.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -25,6 +26,6 @@
     "microservice"
   ],
   "author": "lsqio",
-  "port": 3010,
+  "watch":"api/v1/*",
   "license": "MIT"
 }
