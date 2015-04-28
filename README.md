@@ -129,7 +129,7 @@ or
 
 Resources
 ---
-- [Service Discovery and Config](https://github.com/lsqio/lsq)
+- [Service Discovery and Config](https://github.com/lsqio)
 - [LSQ.io Docs](https://github.com/lsqio/docs)
 
 
