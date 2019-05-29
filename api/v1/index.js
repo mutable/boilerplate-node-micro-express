@@ -1,16 +1,16 @@
-var express = require('express')
-  , api = express.Router()
-  , request = require('request')
-  , lsq = require('lsq')
-  , sq
-  , config
+const express = require('express');
+const api = express.Router();
+Meta = require('@mutable/meta');
 
-lsq.config.get().then(function(c){
-  config = c
+let config;
+
+Meta.config()
+.then((_config) => {
+  config = _config;
 })
 
-api.get('/',function(req,res){
-  res.send(config)
+api.get('/', (req,res) => {
+  res.send(config);
 })
 
-module.exports = api
+module.exports = api;
