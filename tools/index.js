@@ -1,4 +1,4 @@
-var tools = {
+const tools = {
 	  report : require('./report') 
 	, sendMarkdown : require('./sendMarkdown') 
 	, getReportingInfo : require('./reporting')
@@ -7,4 +7,4 @@ var tools = {
 	, homePage : require('./homePage')	
 }
 
-module.exports = tools
+module.exports = tools;

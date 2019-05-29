@@ -1,16 +1,10 @@
-var express = require('express')
-  , lsq = require('lsq')
-  , http = require('http')
-  , logger = require('morgan')
-  , bodyParser = require('body-parser')
-  , debug = require('debug')
-  , methodOverride = require('method-override')
-  , log = debug('app:log')
-  , error = debug('app:error')
-  , app = express()
-  , tools = require('./tools')
+const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const app = express();
+const tools = require('./tools');
 
-  app
+app
   .set('port', process.env.PORT || 3000)  
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
@@ -21,6 +15,6 @@ var express = require('express')
   .get('/',tools.homePage)
   .get('/test', tools.test)
   .get('/health',tools.healthCheck)
-  .listen(app.get('port'),function(){
+  .listen(app.get('port'), () => {
     console.log("Express server listening on port " + app.get('port'))
-  })
+  });

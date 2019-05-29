@@ -1,7 +1,7 @@
-  var sendMarkdown =  require('./sendMarkdown')
+  const sendMarkdown =  require('./sendMarkdown');
   
-  var homePage = function(req, res){
-    res.send(sendMarkdown())
+  const homePage = (req, res) => {
+    res.send(sendMarkdown());
   }
 
-  module.exports = homePage
+  module.exports = homePage;
