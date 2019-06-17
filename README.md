@@ -28,7 +28,7 @@ Service Discovery and Config manager
 
 ## API
 ```js
-var lsq = require('lsq')
+const Meta = require('@mutable/meta')
 ```
 
   All methods are asynchronous, and take a node-style error-first callback as last argument.
@@ -39,24 +39,24 @@ Service Discovery
 ---
 
 
-### lsq.services.list() -> Array<String>
+### Meta.services() -> Array<String>
 
   Returns all the currently known service names.
 
-### lsq.services.get(service: String) -> Service
+### Meta.service(service: String) -> Service
 
-  Retrieves a particular service.
+  Returns a particular service.
 
 
 
 Example:
 ```js
 
-  lsq.services.get("email")
-    .then(function(service){
-       request.post('http://'+service+'/api/v1/demo/email'
-        ,{json:req.body}
-        , function (error, response, body) {
+  Meta.service("email")
+    .then((service) => {
+      request.post(`http://${service}/api/v1/demo/email`,
+        {json:req.body},
+        (error, response, body) => {
           if(error){
             console.error('can not reach email service')
             return res.send(500,{error:error,result:'can not reach email service'})
@@ -72,22 +72,22 @@ or
 
 ```js
 
-  lsq.services.get("email",function(config){
+  Meta.service("email", (config) => {
 
     // returns a object 
     // {"hostname":"127.0.0.1", "port":3001, toString(): "127.0.0.1:3001" }
     // in a string it prints concat host and port
 
-     request.post('http://'+service+'/api/v1/demo/email'
-      ,{json:req.body}
-      , function (error, response, body) {
-        if(error){
-          console.error('can not reach email service')
-          return res.send(500,{error:error,result:'can not reach email service'})
-        } 
+    request.post(`http://${service}/api/v1/demo/email`,
+    {json:req.body},
+    (error, response, body) => {
+      if(error){
+        console.error('can not reach email service')
+        return res.send(500,{error:error,result:'can not reach email service'})
+      } 
 
-        res.send({result:"email sent"})
-      })
+      res.send({result:"email sent"})
+    })
   })
 
 ```
@@ -102,35 +102,24 @@ Config
 ---
 
 
-### lsq.config.get() -> JSON
+### Meta.config() -> JSON
 
   Fetches the JSON configuration for the current service.
 
 Example:
 ```js
 
-  lsq.config.get()
-    .then(function(config){
-      // returns a object {}
+  Meta.config()
+    .then((_config) => {
+      // returns an object {}
     })
-
-```
-
-or 
-
-
-```js
-
-  lsq.config.get(function(config){
-     // returns a object {}
-  })
 
 ```
 
 Resources
 ---
-- [Service Discovery and Config](https://github.com/lsqio)
-- [LSQ.io Docs](https://github.com/lsqio/docs)
+- [Service Discovery and Config](https://github.com/mutable)
+- [Mutable.io Docs](https://github.com/mutable/docs)
 
 
 
