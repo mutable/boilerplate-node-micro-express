@@ -10,8 +10,8 @@ NodeMicro
 APIs
 ---
 Fill this in 
-all routes beginning /api/v1
-go to file ./api/v1/index.js
+all routes beginning /api/
+go to file ./api/index.js
 
 
 Config
@@ -54,7 +54,7 @@ Example:
 
   Meta.service("email")
     .then((service) => {
-      request.post(`http://${service}/api/v1/demo/email`,
+      request.post(`http://${service}/api/demo/email`,
         {json:req.body},
         (error, response, body) => {
           if(error){

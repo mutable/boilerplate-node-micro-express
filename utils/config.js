@@ -1,3 +1,10 @@
+
+/**
+* DEMO FILE
+* 
+* Getting Configs set in Mutable App
+**/
+
 const Meta = require('@mutable/meta');
 
 const ENV = process.env.NODE_ENV === 'production' ? 'prod' : 'dev';
@@ -12,7 +19,7 @@ let config = {};
 
 Meta.config()
 .then((_config) => {
-  config = _config
+  config = _config;
   return _config;
 })
 .catch((e) => {throw e});
