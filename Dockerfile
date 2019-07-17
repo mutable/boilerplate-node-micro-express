@@ -1,11 +1,8 @@
-FROM node:11.4.0
-
+FROM node:12.6.0
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-
 COPY . /usr/src/app
-RUN npm install
-
 ENV NODE_ENV production
+RUN rm -rf ./node_modules; npm install
 ENTRYPOINT ["npm", "run"]
 CMD ["start"]

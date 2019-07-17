@@ -1,6 +1,6 @@
 {
   "name": "mutable-micro-node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "frontend microservice example with express",
   "main": "app.js",
   "engines": {
